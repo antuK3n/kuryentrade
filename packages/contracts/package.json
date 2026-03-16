@@ -1,0 +1,27 @@
+{
+  "name": "@kuryentrade/contracts",
+  "version": "1.0.0",
+  "description": "KuryenTrade Smart Contracts - SolarSystemNFT, EnergyToken, ECTRequestBoard",
+  "main": "index.js",
+  "scripts": {
+    "compile": "hardhat compile",
+    "test": "hardhat test",
+    "clean": "hardhat clean",
+    "deploy:local": "hardhat run scripts/deploy.ts --network localhost",
+    "node": "hardhat node"
+  },
+  "keywords": ["solidity", "nft", "erc20", "energy", "polkadot"],
+  "author": "KuryenTrade Team",
+  "license": "MIT",
+  "type": "commonjs",
+  "dependencies": {
+    "@openzeppelin/contracts": "^5.0.0"
+  },
+  "devDependencies": {
+    "@nomicfoundation/hardhat-toolbox": "^6.1.0",
+    "@types/node": "^25.1.0",
+    "hardhat": "^2.28.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.3"
+  }
+}
