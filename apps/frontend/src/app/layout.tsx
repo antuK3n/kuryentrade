@@ -1,44 +1,45 @@
-import type { Metadata } from "next";
-import { Inter, Jersey_25 } from "next/font/google";
-import "./globals.css";
-import { Web3Provider } from "@/lib/Web3Context";
-import Header from "@/components/Header";
-import Sidebar from "@/components/Sidebar";
+import type { Metadata } from 'next'
+import { Geist, Geist_Mono } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
+import './globals.css'
 
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const jersey25 = Jersey_25({
-  variable: "--font-jersey",
-  weight: "400",
-  subsets: ["latin"],
-});
+const _geist = Geist({ subsets: ["latin"] });
+const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "KuryenTrade - P2P Energy Trading",
-  description: "Trade renewable energy credits in your neighborhood grid",
-};
+  title: 'KuryenTrade - Energy Trading Platform',
+  description: 'Trade renewable energy securely through blockchain technology',
+  generator: 'v0.app',
+  icons: {
+    icon: [
+      {
+        url: '/icon-light-32x32.png',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/icon-dark-32x32.png',
+        media: '(prefers-color-scheme: dark)',
+      },
+      {
+        url: '/icon.svg',
+        type: 'image/svg+xml',
+      },
+    ],
+    apple: '/apple-icon.png',
+  },
+}
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} ${jersey25.variable} antialiased bg-[#F5F7F6] min-h-screen`}>
-        <Web3Provider>
-          <Header />
-          <div className="flex">
-            <Sidebar />
-            <main className="flex-1 ml-[280px] mt-[72px] min-h-[calc(100vh-72px)]">
-              {children}
-            </main>
-          </div>
-        </Web3Provider>
+    <html lang="en"suppressHydrationWarning>
+      <body className="font-sans antialiased">
+        {children}
+        <Analytics />
       </body>
     </html>
-  );
+  )
 }
