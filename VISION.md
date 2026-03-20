@@ -1,0 +1,1 @@
+KuryenTrade enables Filipinos to trade solar energy peer-to-peer on Polkadot. Solar systems become NFTs, generated kWh becomes tokens (ECT), and neighbors trade clean energy directly—no middlemen, no hidden fees.
